@@ -10,10 +10,12 @@ import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import Contact from './pages/Contact';
 import './styles/global.css';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
-  return (
+  return ( 
     <Router>
+      <Analytics />
       <div className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-grow">
