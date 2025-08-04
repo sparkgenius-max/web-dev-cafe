@@ -11,12 +11,14 @@ const Header: React.FC = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="bg-white shadow-lg sticky top-0 z-50">
+    <header className="bg-white shadow-lg sticky top-0 z-50 border-b border-gray-100">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
-          <Link to="/" className="flex items-center space-x-2">
-            <Coffee className="text-[#D4A017] w-8 h-8" />
-            <span className="text-2xl font-bold text-[#2E1A0F] font-montserrat">
+          <Link to="/" className="flex items-center space-x-3 group">
+            <div className="p-2 bg-gradient-to-r from-[#00965E] to-[#00784A] rounded-full group-hover:scale-110 transition-transform duration-300">
+              <Coffee className="text-white w-6 h-6" />
+            </div>
+            <span className="text-2xl font-bold text-[#222222] font-montserrat group-hover:text-[#00965E] transition-colors duration-300">
               Malang Coffee House
             </span>
           </Link>
@@ -25,48 +27,48 @@ const Header: React.FC = () => {
           <nav className="hidden md:flex space-x-8">
             <Link
               to="/"
-              className={`font-medium transition-colors hover:text-[#D4A017] ${
-                isActive('/') ? 'text-[#D4A017]' : 'text-[#2E1A0F]'
+              className={`font-semibold transition-all duration-300 hover:text-[#00965E] hover:scale-105 ${
+                isActive('/') ? 'text-[#00965E]' : 'text-[#222222]'
               }`}
             >
               Home
             </Link>
             <Link
               to="/about"
-              className={`font-medium transition-colors hover:text-[#D4A017] ${
-                isActive('/about') ? 'text-[#D4A017]' : 'text-[#2E1A0F]'
+              className={`font-semibold transition-all duration-300 hover:text-[#00965E] hover:scale-105 ${
+                isActive('/about') ? 'text-[#00965E]' : 'text-[#222222]'
               }`}
             >
               About
             </Link>
             <Link
               to="/menu"
-              className={`font-medium transition-colors hover:text-[#D4A017] ${
-                isActive('/menu') ? 'text-[#D4A017]' : 'text-[#2E1A0F]'
+              className={`font-semibold transition-all duration-300 hover:text-[#00965E] hover:scale-105 ${
+                isActive('/menu') ? 'text-[#00965E]' : 'text-[#222222]'
               }`}
             >
               Menu
             </Link>
             <Link
               to="/gallery"
-              className={`font-medium transition-colors hover:text-[#D4A017] ${
-                isActive('/gallery') ? 'text-[#D4A017]' : 'text-[#2E1A0F]'
+              className={`font-semibold transition-all duration-300 hover:text-[#00965E] hover:scale-105 ${
+                isActive('/gallery') ? 'text-[#00965E]' : 'text-[#222222]'
               }`}
             >
               Gallery
             </Link>
             <Link
               to="/blog"
-              className={`font-medium transition-colors hover:text-[#D4A017] ${
-                isActive('/blog') ? 'text-[#D4A017]' : 'text-[#2E1A0F]'
+              className={`font-semibold transition-all duration-300 hover:text-[#00965E] hover:scale-105 ${
+                isActive('/blog') ? 'text-[#00965E]' : 'text-[#222222]'
               }`}
             >
               Blog
             </Link>
             <Link
               to="/contact"
-              className={`font-medium transition-colors hover:text-[#D4A017] ${
-                isActive('/contact') ? 'text-[#D4A017]' : 'text-[#2E1A0F]'
+              className={`font-semibold transition-all duration-300 hover:text-[#00965E] hover:scale-105 ${
+                isActive('/contact') ? 'text-[#00965E]' : 'text-[#222222]'
               }`}
             >
               Contact
@@ -76,7 +78,7 @@ const Header: React.FC = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden text-[#2E1A0F] hover:text-[#D4A017] transition-colors"
+            className="md:hidden text-[#222222] hover:text-[#00965E] transition-colors p-2 rounded-full hover:bg-gray-50"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -84,12 +86,12 @@ const Header: React.FC = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden pb-4 space-y-2">
+          <nav className="md:hidden pb-4 space-y-2 bg-white rounded-lg shadow-lg mt-2 p-4">
             <Link
               to="/"
               onClick={toggleMenu}
-              className={`block py-2 px-4 rounded font-medium transition-colors hover:bg-[#F8F4E9] ${
-                isActive('/') ? 'text-[#D4A017] bg-[#F8F4E9]' : 'text-[#2E1A0F]'
+              className={`block py-3 px-4 rounded-lg font-semibold transition-all duration-300 hover:bg-[#00965E] hover:text-white ${
+                isActive('/') ? 'text-[#00965E] bg-[#F5F5F5]' : 'text-[#222222]'
               }`}
             >
               Home
@@ -97,8 +99,8 @@ const Header: React.FC = () => {
             <Link
               to="/about"
               onClick={toggleMenu}
-              className={`block py-2 px-4 rounded font-medium transition-colors hover:bg-[#F8F4E9] ${
-                isActive('/about') ? 'text-[#D4A017] bg-[#F8F4E9]' : 'text-[#2E1A0F]'
+              className={`block py-3 px-4 rounded-lg font-semibold transition-all duration-300 hover:bg-[#00965E] hover:text-white ${
+                isActive('/about') ? 'text-[#00965E] bg-[#F5F5F5]' : 'text-[#222222]'
               }`}
             >
               About
@@ -106,8 +108,8 @@ const Header: React.FC = () => {
             <Link
               to="/menu"
               onClick={toggleMenu}
-              className={`block py-2 px-4 rounded font-medium transition-colors hover:bg-[#F8F4E9] ${
-                isActive('/menu') ? 'text-[#D4A017] bg-[#F8F4E9]' : 'text-[#2E1A0F]'
+              className={`block py-3 px-4 rounded-lg font-semibold transition-all duration-300 hover:bg-[#00965E] hover:text-white ${
+                isActive('/menu') ? 'text-[#00965E] bg-[#F5F5F5]' : 'text-[#222222]'
               }`}
             >
               Menu
@@ -115,8 +117,8 @@ const Header: React.FC = () => {
             <Link
               to="/gallery"
               onClick={toggleMenu}
-              className={`block py-2 px-4 rounded font-medium transition-colors hover:bg-[#F8F4E9] ${
-                isActive('/gallery') ? 'text-[#D4A017] bg-[#F8F4E9]' : 'text-[#2E1A0F]'
+              className={`block py-3 px-4 rounded-lg font-semibold transition-all duration-300 hover:bg-[#00965E] hover:text-white ${
+                isActive('/gallery') ? 'text-[#00965E] bg-[#F5F5F5]' : 'text-[#222222]'
               }`}
             >
               Gallery
@@ -124,8 +126,8 @@ const Header: React.FC = () => {
             <Link
               to="/blog"
               onClick={toggleMenu}
-              className={`block py-2 px-4 rounded font-medium transition-colors hover:bg-[#F8F4E9] ${
-                isActive('/blog') ? 'text-[#D4A017] bg-[#F8F4E9]' : 'text-[#2E1A0F]'
+              className={`block py-3 px-4 rounded-lg font-semibold transition-all duration-300 hover:bg-[#00965E] hover:text-white ${
+                isActive('/blog') ? 'text-[#00965E] bg-[#F5F5F5]' : 'text-[#222222]'
               }`}
             >
               Blog
@@ -133,8 +135,8 @@ const Header: React.FC = () => {
             <Link
               to="/contact"
               onClick={toggleMenu}
-              className={`block py-2 px-4 rounded font-medium transition-colors hover:bg-[#F8F4E9] ${
-                isActive('/contact') ? 'text-[#D4A017] bg-[#F8F4E9]' : 'text-[#2E1A0F]'
+              className={`block py-3 px-4 rounded-lg font-semibold transition-all duration-300 hover:bg-[#00965E] hover:text-white ${
+                isActive('/contact') ? 'text-[#00965E] bg-[#F5F5F5]' : 'text-[#222222]'
               }`}
             >
               Contact

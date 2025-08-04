@@ -96,7 +96,7 @@ export const blogPosts: BlogPost[] = [
     author: 'Andi Pratama',
     date: '2025-01-08',
     category: 'Local Malang Stories',
-    featuredImage: 'https://images.pexels.com/photos/1251175/pexels-photo-1251175.jpeg?auto=compress&cs=tinysrgb&w=800',
+    featuredImage: 'https://images.pexels.com/photos/7937410/pexels-photo-7937410.jpeg?cs=srgb&dl=pexels-nicola-barts-7937410.jpg&fm=jpg&_gl=1*zaou0o*_ga*ODI2Nzc5Nzk0LjE3NTQyMzU0NDY.*_ga_8JE65Q40S6*czE3NTQyOTEyMjEkbzIkZzEkdDE3NTQyOTEyMzEkajUwJGwwJGgw',
     readTime: '4 min read'
   },
   {
